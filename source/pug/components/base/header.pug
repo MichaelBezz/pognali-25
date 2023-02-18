@@ -1,36 +1,77 @@
 mixin header(headerMods, currentUrl)
   -
-    const headerLinks = [
+    const navigationLinks = [
       {
-        href: "index.html",
-        text: "Главная"
+        href: "#",
+        text: "О сервисе"
       },
       {
         href: "#",
-        text: "Страница 2"
+        text: "Направления"
       },
       {
         href: "#",
-        text: "Страница 3"
+        text: "Попутчики"
+      }
+    ]
+  -
+    const contactLinks = [
+      {
+        href: "tel:+78005556677",
+        text: "8(800)555-66-77"
       },
+      {
+        href: "mailto:example@mail.ru",
+        text: "example@mail.ru"
+      }
+    ]
+  -
+    const socialLinks = [
+      {
+        href: "#",
+        text: "Telegram"
+      },
+      {
+        href: "#",
+        text: "VKontakte"
+      },
+      {
+        href: "#",
+        text: "YouTube"
+      }
     ]
 
   header.header(class=headerMods)
     .container
       if(currentUrl === "index.html")
         //- lighthouse снимает 10 баллов SEO за <a> без href
-        span.header__logo Логотип
+        span.header__logo
+          +logo()
       else
-        a.header__logo(href="index.html", aria-label="Переход на главную") Логотип
-      nav.main-nav
-        button.main-nav__toggle.btn-reset(type="button", aria-label="Переключатель отображения меню", aria-pressed="false")
+        a.header__logo(href="index.html", aria-label="Переход на главную")
+          +logo()
+
+      nav.header__navigation.navigation
+        button.navigation__toggle(type="button", aria-label="Переключатель отображения меню", aria-pressed="false")
           +icon("icon-burger", 20, 20)
-        .main-nav__wrapper
-          ul.main-nav__list
-            each link in headerLinks
-              - const activeState = currentUrl === link.href
-              li.main-nav__item
-                if(activeState)
-                  span.main-nav__link.is-active=link.text
-                else
-                  a.main-nav__link(href=link.href)=link.text
+
+        ul.navigation__list.site-navigation
+          each link in navigationLinks
+            - const activeState = currentUrl === link.href
+            li.site-navigation__item
+              if(activeState)
+                span.site-navigation__link.is-active=link.text
+              else
+                a.site-navigation__link(href=link.href)=link.text
+
+        a.navigation__login(href="#") Авторизация
+
+        ul.navigation__list.site-contact
+          each link in contactLinks
+            li.site-contact__item
+              a.site-contact__link(href=link.href)=link.text
+
+        ul.navigation__list.social
+          each link in socialLinks
+            li.social__item
+              a.social__link(href=link.href)=link.text

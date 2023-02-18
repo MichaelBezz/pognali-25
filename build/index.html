@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
   <head>
-    <title>ProjectName</title>
+    <title>Let's go</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -9,26 +9,40 @@
     <link rel="stylesheet" href="css/style.min.css">
   </head>
   <body>
-    <div class="visually-hidden"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><symbol id="icon-close" viewBox="0 0 20 20"><g fill="none"><path d="M.293 18.291a1 1 0 101.414 1.414L10 11.413l8.292 8.292a1 1 0 101.414-1.414l-8.292-8.292 8.292-8.292A1 1 0 1018.291.293L9.999 8.585 1.707.293A1 1 0 10.293 1.707L8.585 10 .293 18.291z"/></g></symbol></svg></div>
+    <div class="visually-hidden"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><symbol id="icon-burger" viewBox="0 0 25 11"><g fill="none">
+<rect width="25" height="3" rx="1.5" fill="white"/>
+<rect y="8" width="25" height="3" rx="1.5" fill="white"/>
+</g></symbol><symbol id="icon-close" viewBox="0 0 20 20"><g fill="none"><path d="M.293 18.291a1 1 0 101.414 1.414L10 11.413l8.292 8.292a1 1 0 101.414-1.414l-8.292-8.292 8.292-8.292A1 1 0 1018.291.293L9.999 8.585 1.707.293A1 1 0 10.293 1.707L8.585 10 .293 18.291z"/></g></symbol></svg>
+    </div>
     <div class="wrapper">
       <header class="header">
-        <div class="container"><span class="header__logo">Логотип</span>
-          <nav class="main-nav">
-            <button class="main-nav__toggle btn-reset" type="button" aria-label="Переключатель отображения меню" aria-pressed="false">
+        <div class="container"><span class="header__logo">
+            <picture>
+              <source media="(min-width: 768px)" srcset="./img/svg/pognali-full-logo.svg"><img src="./img/svg/pognali-mobile-logo.svg" width="96" height="15" alt="Логотип Погнали.">
+            </picture></span>
+          <nav class="header__navigation navigation">
+            <button class="navigation__toggle" type="button" aria-label="Переключатель отображения меню" aria-pressed="false">
               <svg width="20" height="20" aria-hidden="true">
                 <use xlink:href="#icon-burger"></use>
               </svg>
             </button>
-            <div class="main-nav__wrapper">
-              <ul class="main-nav__list">
-                <li class="main-nav__item"><span class="main-nav__link is-active">Главная</span>
-                </li>
-                <li class="main-nav__item"><a class="main-nav__link" href="#">Страница 2</a>
-                </li>
-                <li class="main-nav__item"><a class="main-nav__link" href="#">Страница 3</a>
-                </li>
-              </ul>
-            </div>
+            <ul class="navigation__list site-navigation">
+              <li class="site-navigation__item"><a class="site-navigation__link" href="#">О сервисе</a>
+              </li>
+              <li class="site-navigation__item"><a class="site-navigation__link" href="#">Направления</a>
+              </li>
+              <li class="site-navigation__item"><a class="site-navigation__link" href="#">Попутчики</a>
+              </li>
+            </ul><a class="navigation__login" href="#">Авторизация</a>
+            <ul class="navigation__list site-contact">
+              <li class="site-contact__item"><a class="site-contact__link" href="tel:+78005556677">8(800)555-66-77</a></li>
+              <li class="site-contact__item"><a class="site-contact__link" href="mailto:example@mail.ru">example@mail.ru</a></li>
+            </ul>
+            <ul class="navigation__list social">
+              <li class="social__item"><a class="social__link" href="#">Telegram</a></li>
+              <li class="social__item"><a class="social__link" href="#">VKontakte</a></li>
+              <li class="social__item"><a class="social__link" href="#">YouTube</a></li>
+            </ul>
           </nav>
         </div>
       </header>

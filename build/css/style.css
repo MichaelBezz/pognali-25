@@ -385,11 +385,43 @@ template {
 }
 
 @font-face {
+  font-family: "Rouble";
   font-style: normal;
   font-weight: 400;
-  font-family: "";
+  src: url("../fonts/rouble.woff2") format("woff2"), url("../fonts/rouble.woff") format("woff");
   font-display: swap;
-  src: url("../fonts/.woff2") format("woff2"), url("../fonts/.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Blogger Sans";
+  font-style: normal;
+  font-weight: 300;
+  src: url("../fonts/blogger-sans-light.woff2") format("woff2"), url("../fonts/blogger-sans-light.woff") format("woff");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Blogger Sans";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/blogger-sans.woff2") format("woff2"), url("../fonts/blogger-sans.woff") format("woff");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Blogger Sans";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../fonts/blogger-sans-medium.woff2") format("woff2"), url("../fonts/blogger-sans-medium.woff") format("woff");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Blogger Sans";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/blogger-sans-bold.woff2") format("woff2"), url("../fonts/blogger-sans-bold.woff") format("woff");
+  font-display: swap;
 }
 
 *,
@@ -624,41 +656,10 @@ button,
   background-color: #2c39f2;
 }
 
-.header .container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
 .header__logo {
-  color: #ffffff;
-}
-
-.main-nav__list {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin: 0;
-  margin-right: 20px;
-  margin-left: 60px;
-  padding: 0;
-  list-style: none;
-}
-
-.main-nav__item {
-  margin-right: 20px;
-}
-
-.main-nav__link {
-  color: #ffffff;
-}
-
-.main-nav__link.is-active {
-  opacity: 0.6;
-}
-
-.main-nav__toggle {
-  display: none;
+  display: block;
+  width: 96px;
+  height: 15px;
 }
 
 .footer {
